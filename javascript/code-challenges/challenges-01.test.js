@@ -43,7 +43,6 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 ------------------------------------------------------------------------------------------------ */
 
 const allUpperCase = (arr) => {
-  // Solution code here...
   let newArr = [];
   arr.forEach(string => {
     let newString = string.toUpperCase();
@@ -92,21 +91,21 @@ Within the addNumbers function, invoke the callback function as many times as ne
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
-const addValues = (arr, value) => {
-  arr.push(value);
-};
+const addValues = (arr, value) => arr.push(value);
 
 const addNumbers = (num, arr, times, callback) => {
-  times.forEach( num =>{
+
+  for(let i=0; i<times; i++){
     callback(arr, num);
-  });
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 
 CHALLENGE 6
 
-Write a function named createList that takes in an array of the current store intentory.
+Write a function named createList that takes in an array of the current store inventory.
 
 The inventory is formatted like this:
 [
@@ -122,6 +121,8 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+  let newArr = [];
+  availableItems.forEach()
 };
 
 /* ------------------------------------------------------------------------------------------------
