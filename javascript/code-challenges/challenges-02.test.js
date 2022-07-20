@@ -34,7 +34,8 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 ------------------------------------------------------------------------------------------------ */
 
 const addQuestion = (arr) => {
-  // Solution code here...
+  let newArr = arr.map((string, i) => string + '?');
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -48,7 +49,8 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
-  // Solution code here...
+  let newArr = arr.map((integer, i) => Math.pow(2, integer));
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
