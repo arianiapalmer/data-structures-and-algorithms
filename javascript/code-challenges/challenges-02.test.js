@@ -23,9 +23,8 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  arr.map(index => {
-    arr.index+=1;
-  });
+  let newArr = arr.map((value, i) => value += 1);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
