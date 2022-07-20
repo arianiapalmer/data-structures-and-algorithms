@@ -9,7 +9,12 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  // Solution code here...
+  const newArr = [];
+  arr.forEach( num => {
+    let newNum = num + 1;
+    newArr.push(newNum);
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -21,7 +26,12 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 ------------------------------------------------------------------------------------------------ */
 
 const addExclamation = (arr) => {
-  // Solution code here...
+  const newArr = [];
+  arr.forEach( string => {
+    let newString = `${string}!`;
+    newArr.push(newString);
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -33,7 +43,12 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 ------------------------------------------------------------------------------------------------ */
 
 const allUpperCase = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.forEach(string => {
+    let newString = string.toUpperCase();
+    newArr.push(newString);
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -41,17 +56,23 @@ CHALLENGE 4
 
 Write a function named `greeting` that takes in a single string and returns the string in all uppercase letters, and followed by an "!".
 
-Then, write a function named `speaker` that takes in an array of strings and a callback function. 
+Then, write a function named `speaker` that takes in an array of strings and a callback function.
 
-Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array. 
+Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array.
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-  // Solution code here...
+  word = word.toUpperCase() + '!';
+  return word;
 };
 
-const speaker = (words, callback) => {
-  // Solution code here...
+const speaker = (word, callback) => {
+  let newArr = [];
+  word.forEach( index =>{
+    let string = callback(index);
+    newArr.push(string);
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -70,19 +91,21 @@ Within the addNumbers function, invoke the callback function as many times as ne
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
-const addValues = (arr, value) => {
-  // Solution code here...
-};
+const addValues = (arr, value) => arr.push(value);
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+
+  for(let i=0; i<times; i++){
+    callback(arr, num);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 
 CHALLENGE 6
 
-Write a function named createList that takes in an array of the current store intentory.
+Write a function named createList that takes in an array of the current store inventory.
 
 The inventory is formatted like this:
 [
@@ -98,6 +121,13 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+  let newArr = [];
+  availableItems.forEach( index => {
+    if (index.available === true){
+      newArr.push(index.name);
+    }
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -115,7 +145,19 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.forEach( index => {
+    if (index % 5 === 0 && index % 3 === 0){
+      newArr.push('Fizz Buzz');
+    } else if (index % 5 === 0){
+      newArr.push('Buzz');
+    } else if (index % 3 ===0){
+      newArr.push('Fizz');
+    } else {
+      newArr.push(index);
+    }
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
